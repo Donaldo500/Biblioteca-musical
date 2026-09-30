@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Header from './components/header';
 import Songs from './components/song';
-import './app.css';
+import './App.css';
 
 class App extends Component{
 
