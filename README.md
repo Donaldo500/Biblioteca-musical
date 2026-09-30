@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Biblioteca musical
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Sass](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
-## Available Scripts
+Primera versión de una biblioteca de música personal hecha con **React**. Muestra la imagen de perfil del usuario, el título de la biblioteca y una lista de canciones con artista y duración. Su evolución, con búsqueda en una API real y TypeScript, está en [Biblioteca-de-musica](https://github.com/Donaldo500/Biblioteca-de-musica).
 
-In the project directory, you can run:
+## Captura de pantalla
 
-### `npm start`
+![Biblioteca musical](docs/screenshots/biblioteca-musical.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Descripción
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+El proyecto se centró en los fundamentos de React:
 
-### `npm test`
+- **Componentes de clase** (`class ... extends Component`).
+- **Estado local** inicializado en el constructor (`this.state`).
+- **Ciclo de vida** con `componentDidMount`.
+- **Renderizado de listas** con `map` y la prop `key`.
+- **Props** para pasar información entre componentes.
+- Estilos escritos en **SCSS** y compilados a CSS.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologías utilizadas
 
-### `npm run build`
+| Tecnología | Uso |
+| --- | --- |
+| React 19 | Interfaz basada en componentes de clase |
+| JavaScript (ES6+) | Lógica de los componentes |
+| SCSS | Estilos (`src/app.scss` compilado a `src/App.css`) |
+| Create React App | Entorno de desarrollo y build |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Estructura del proyecto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```text
+src/
+├── App.js                 # Componente raíz
+├── App.css / app.scss     # Estilos
+└── components/
+    ├── header.js          # Imagen y título de la biblioteca
+    ├── song.js            # Lista de canciones (estado local)
+    └── img/COQUETA.jpeg
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Instalación y uso
 
-### `npm run eject`
+### Requisitos
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js 18 o superior
+- npm
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Pasos
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone https://github.com/Donaldo500/Biblioteca-musical.git
+cd Biblioteca-musical
+npm install
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+La aplicación se abre en [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+| Comando | Descripción |
+| --- | --- |
+| `npm start` | Servidor de desarrollo |
+| `npm run build` | Build de producción en `build/` |
+| `npm test` | Pruebas en modo interactivo |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Ejemplos de uso
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para agregar canciones a la biblioteca, añade objetos al estado del componente `Songs` en `src/components/song.js`:
 
-### Code Splitting
+```js
+this.state = {
+  song: [
+    { id: 1, songName: "Into you", artist: "Ariana Grande", duration: "4:04" },
+    { id: 2, songName: "Azul",     artist: "Zoé",           duration: "3:14" },
+    { id: 3, songName: "Coqueta",  artist: "Grupo Frontera", duration: "4:01" }
+  ]
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Si modificas `src/app.scss`, vuelve a compilarlo hacia `src/App.css` (por ejemplo con la extensión *Live Sass Compiler* de VS Code o con `npx sass src/app.scss src/App.css`).
 
-### Analyzing the Bundle Size
+## Contribuciones
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Proyecto individual con fines de aprendizaje. Las sugerencias son bienvenidas mediante issues o pull requests.
 
-### Making a Progressive Web App
+## Autor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Donaldo Ibarra** - [@Donaldo500](https://github.com/Donaldo500)
